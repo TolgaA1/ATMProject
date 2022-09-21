@@ -23,7 +23,8 @@ public class AccountManager {
                 String pinToCompare = currentUser[0];
                 if(pinToCompare.equals(pinToCheck))
                 {
-
+                    loggedInPin = currentUser[0];
+                    loggedInBalance = Float.parseFloat(currentUser[1]);
                     return true;
                 }
             }
@@ -84,6 +85,7 @@ public class AccountManager {
     }
 
     public void loginProcess(){
+        String[] accountToReturn = new String[2];
         //method that will allow user to login
         try{
             Scanner scanner = new Scanner(System.in);
@@ -109,7 +111,7 @@ public class AccountManager {
         }
     }
 
-    public float getLoggedInFloat() {
+    public float getLoggedInBalance() {
         return loggedInBalance;
     }
 
